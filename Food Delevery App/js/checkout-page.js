@@ -19,6 +19,15 @@ function getSavedFoodlyAddress() {
     }
 }
 
+function getSavedAddresses() {
+    try {
+        const saved = JSON.parse(localStorage.getItem("foodlyAddresses") || "[]");
+        return Array.isArray(saved) ? saved.filter(address => address && typeof address === "object") : [];
+    } catch {
+        return [];
+    }
+}
+
 export const CheckoutState = {
     customer: {
         name: "",
@@ -283,6 +292,94 @@ function restoreDraft() {
     updatePaymentNotice(CheckoutState.paymentMethod);
 }
 
+function fillAddress(address) {
+    const form = document.querySelector("#checkout-form");
+    if (!form || !address) return;
+
+    const values = {
+        house: address.house || "",
+        street: address.street || address.area || "",
+        city: address.city || "",
+        state: address.state || "",
+        pincode: address.pincode || address.pin || "",
+        landmark: address.landmark || ""
+    };
+    Object.entries(values).forEach(([name, value]) => {
+        if (form.elements[name]) form.elements[name].value = value;
+    });
+    persistDraft();
+    resetFormErrors();
+}
+
+function setAddressFieldsVisible(visible) {
+    document.querySelectorAll("#checkout-form [name=house], #checkout-form [name=street], #checkout-form [name=city], #checkout-form [name=state], #checkout-form [name=pincode], #checkout-form [name=landmark]").forEach(input => {
+        input.closest(".field-group")?.classList.toggle("easy-address-field-hidden", !visible);
+    });
+}
+
+function renderEasyAddressChooser() {
+    const form = document.querySelector("#checkout-form");
+    const panel = form?.querySelector(".checkout-panel");
+    if (!form || !panel) return;
+
+    document.querySelector("#easy-address-chooser")?.remove();
+    form.classList.remove("easy-checkout-active");
+    setAddressFieldsVisible(true);
+    if (!(document.body.classList.contains("easy-mode") || document.documentElement.classList.contains("text-extra-large") || document.documentElement.classList.contains("high-contrast"))) return;
+
+    const addresses = getSavedAddresses();
+    const chooser = element("section", "easy-address-chooser");
+    chooser.id = "easy-address-chooser";
+    chooser.setAttribute("aria-labelledby", "easy-address-title");
+    const title = element("h3", "easy-address-title", "Deliver to");
+    title.id = "easy-address-title";
+    chooser.append(title);
+
+    if (!addresses.length) {
+        chooser.append(element("p", "checkout-muted", "No saved address found. Enter your delivery address below."));
+        form.classList.add("easy-checkout-active");
+        panel.prepend(chooser);
+        return;
+    }
+
+    const selected = getSavedFoodlyAddress() || addresses[0];
+    const list = element("div", "easy-address-list");
+    addresses.forEach(address => {
+        const label = element("label", "easy-address-option");
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "easySavedAddress";
+        radio.value = address.id || "";
+        radio.checked = address.id === selected.id;
+        const copy = element("span");
+        const name = element("strong", "easy-address-name", address.label || address.type || "Saved address");
+        const lines = [address.house, address.area || address.street, [address.city, address.state].filter(Boolean).join(", ") + (address.pin ? ` - ${address.pin}` : "")].filter(Boolean);
+        copy.append(name, element("small", "easy-address-copy", lines.join("\n")));
+        label.append(radio, copy);
+        radio.addEventListener("change", () => {
+            fillAddress(address);
+            setAddressFieldsVisible(false);
+        });
+        list.append(label);
+    });
+
+    const actions = element("div", "easy-address-actions");
+    const change = element("button", "secondary-button", "Change address");
+    change.type = "button";
+    change.addEventListener("click", () => {
+        const editing = !form.classList.contains("easy-checkout-active");
+        form.classList.toggle("easy-checkout-active", editing);
+        setAddressFieldsVisible(editing);
+    });
+    const add = element("a", "secondary-button", "Add new address");
+    add.href = "addresses.html";
+    actions.append(change, add);
+    chooser.append(list, actions);
+    panel.prepend(chooser);
+    fillAddress(selected);
+    setAddressFieldsVisible(false);
+}
+
 function resetFormErrors() {
     ["name", "mobile", "email", "house", "street", "city", "state", "pincode", "landmark"].forEach(field => setFieldError(field, ""));
     setPaymentError("");
@@ -526,12 +623,15 @@ function setupCheckoutPage() {
     renderCheckoutItems();
     renderSummary();
     restoreDraft();
+    renderEasyAddressChooser();
     attachFormListeners();
     updatePaymentNotice(CheckoutState.paymentMethod || DEFAULT_PAYMENT);
     hideCheckoutMessage();
 
     if (loading) loading.hidden = true;
     if (content) content.hidden = false;
+
+    document.addEventListener("accessibility:changed", renderEasyAddressChooser);
 }
 
 if (document.querySelector("#checkout-page")) {

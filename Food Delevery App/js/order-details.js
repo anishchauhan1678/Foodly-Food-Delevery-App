@@ -44,32 +44,32 @@ function renderDetails() {
             <p><strong>Order date:</strong> ${new Date(normalizedOrder.createdAt || normalizedOrder.orderDate || Date.now()).toLocaleString()}</p>
             <p><strong>Order status:</strong> ${ORDER_STATUS_LABELS[normalizedOrder.status] || normalizedOrder.status}</p>
 
-            <div style="margin-top: 1.5rem;">
+            <div class="order-details-section">
                 <h3>Customer information</h3>
                 <p>${customer.name || "N/A"}</p>
                 <p>${customer.mobile || "N/A"}</p>
                 <p>${customer.email || "N/A"}</p>
             </div>
 
-            <div style="margin-top: 1.5rem;">
+            <div class="order-details-section">
                 <h3>Delivery address</h3>
                 <p>${address.house || ""} ${address.street || ""}</p>
                 <p>${address.city || ""}, ${address.state || ""} ${address.pincode || ""}</p>
                 <p>${address.landmark || ""}</p>
             </div>
 
-            <div style="margin-top: 1.5rem;">
+            <div class="order-details-section">
                 <h3>Ordered items</h3>
                 <ul>
                     ${items.map(item => `
-                        <li style="margin-bottom: 0.75rem;">
+                        <li class="order-details-item">
                             ${item.name || "Food item"} × ${item.quantity || 0} — ${money((Number(item.price) || 0) * (Number(item.quantity) || 0))}
                         </li>
                     `).join("")}
                 </ul>
             </div>
 
-            <div style="margin-top: 1.5rem;">
+            <div class="order-details-section">
                 <p><strong>Subtotal:</strong> ${money(normalizedOrder.subtotal || 0)}</p>
                 <p><strong>Delivery fee:</strong> ${money(normalizedOrder.deliveryFee || 0)}</p>
                 <p><strong>Discount:</strong> ${money(normalizedOrder.discount || 0)}</p>
@@ -78,7 +78,7 @@ function renderDetails() {
                 <p><strong>Payment status:</strong> ${normalizedOrder.paymentStatus || "Pending"}</p>
             </div>
 
-            <div class="checkout-empty-actions" style="margin-top: 1.5rem;">
+            <div class="checkout-empty-actions order-details-actions">
                 ${!["delivered", "cancelled"].includes(normalizedOrder.status) ? `<a class="primary-button" href="track-order.html?order=${encodeURIComponent(normalizedOrder.orderCode || normalizedOrder.id)}">Track Order</a>` : ""}
                 <a class="secondary-button" href="../index.html">Continue Shopping</a>
                 <a class="secondary-button" href="orders.html">Back to Orders</a>

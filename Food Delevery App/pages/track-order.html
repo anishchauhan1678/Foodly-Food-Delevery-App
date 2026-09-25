@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
     <title>Track Order | Food Delivery App</title>
 
@@ -11,7 +12,6 @@
 
     <!-- Track Order CSS -->
     <link rel="stylesheet" href="../css/track-order.css?v=12">
-    <style>.legacy-track-content { display: none !important; }</style>
 </head>
 
 <body>
@@ -214,11 +214,11 @@
                 <div class="item">
 
                     <div>
-                        <strong>Classic Chicken Burger</strong>
+                        <strong id="legacy-item-name">-</strong>
                         <span>Quantity: 1</span>
                     </div>
 
-                    <strong>₹139</strong>
+                    <strong id="legacy-item-price">-</strong>
 
                 </div>
 
@@ -257,18 +257,5 @@
 
     <script type="module" src="../js/app.js"></script>
     <script type="module" src="../js/order-tracking.js"></script>
-    <script>
-
-        // Get order ID from URL
-        const params = new URLSearchParams(window.location.search);
-
-        const orderId =
-            params.get("orderId") || "ORD-B81104";
-
-        document.getElementById("orderId").textContent =
-            orderId;
-
-    </script>
-
 </body>
 </html>

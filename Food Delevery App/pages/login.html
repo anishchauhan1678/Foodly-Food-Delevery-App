@@ -5,20 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Food Delivery App</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/checkout.css">
-    <style>
-        body { background: #fff; }
-        .auth-shell { max-width: 520px; margin: 4rem auto; padding: 0 1rem 4rem; }
-        .auth-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 20px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08); padding: 2rem; }
-        .auth-card h1 { margin: 0.5rem 0 1rem; font-size: clamp(2rem, 5vw, 2.7rem); }
-        .auth-links { margin-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
-        .auth-links a { color: #e85a28; font-weight: 700; }
-        .form-error { min-height: 22px; color: #b91c1c; font-weight: 700; margin-top: 0.5rem; }
-        .form-error.success { color: #166534; }
-        .field-group.full-width { grid-column: 1 / -1; }
-        @media (max-width: 600px) { .auth-card { padding: 1.25rem; } }
-    </style>
+    <link rel="stylesheet" href="../css/auth.css">
 </head>
 
 <body>
@@ -92,7 +82,7 @@
                     </div>
                 </div>
                 <div class="form-error" id="login-error" aria-live="polite"></div>
-                <button class="primary-button" type="submit" style="width:100%; margin-top: 1rem;">Login</button>
+                <button class="primary-button auth-submit" type="submit">Login</button>
             </form>
             <div class="auth-links">
                 <a href="register.html">Create Account</a>

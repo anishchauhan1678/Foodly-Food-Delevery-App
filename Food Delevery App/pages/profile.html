@@ -5,25 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile | Food Delivery App</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/checkout.css">
     <link rel="stylesheet" href="../css/profile.css?v=13">
-    <style>.legacy-profile { display: none !important; }</style>
-    <style>
-        body { background: #fff; }
-        .profile-shell { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem 4rem; }
-        .profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .card { background: #fff; border: 1px solid #e5e7eb; border-radius: 18px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05); padding: 1.5rem; }
-        .card h2 { margin-top: 0.5rem; margin-bottom: 1rem; }
-        .info-list { display: grid; gap: 0.75rem; }
-        .info-row { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #f1f1f1; }
-        .muted { color: #666; }
-        .profile-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
-        .section-message { margin-top: 1rem; padding: 0.9rem 1rem; border-radius: 12px; background: #eef2ff; color: #1e3a8a; }
-        .section-message.danger { background: #fef2f2; color: #991b1b; }
-        .section-message.success { background: #ecfdf5; color: #166534; }
-        @media (max-width: 720px) { .profile-grid { grid-template-columns: 1fr; } }
-    </style>
 </head>
 
 <body>
@@ -188,12 +173,12 @@
                             <input id="confirm-password" type="password" required>
                         </div>
                     </div>
-                    <button type="submit" class="primary-button" style="margin-top: 1rem;">Change Password</button>
+                    <button type="submit" class="primary-button profile-submit">Change Password</button>
                 </form>
             </section>
         </div>
 
-        <section class="card" style="margin-top:1.5rem;" id="edit-profile-panel" hidden>
+        <section class="card profile-edit-section" id="edit-profile-panel" hidden>
             <p class="eyebrow">Edit profile</p>
             <h2>Update details</h2>
             <form id="edit-profile-form" novalidate>

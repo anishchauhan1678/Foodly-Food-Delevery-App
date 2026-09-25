@@ -7,6 +7,8 @@
 }
 
 [hidden], .legacy-profile { display: none !important; }
+.profile-submit { margin-top: 1rem; }
+.profile-edit-section { margin-top: 1.5rem; }
 .profile-dashboard { max-width: 1180px; margin: 0 auto; padding: 2rem 1rem 4rem; color: var(--profile-ink); }
 .profile-hero { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.25rem; padding: 1.5rem; margin-bottom: 1.25rem; border: 1px solid #f6c6b4; border-radius: 18px; background: linear-gradient(110deg, #fff7f2, #ffffff); box-shadow: 0 12px 30px rgba(20, 37, 61, 0.06); }
 .profile-avatar { display: grid; width: 5rem; height: 5rem; place-items: center; border-radius: 50%; background: #ffe1d4; font-size: 2.3rem; }

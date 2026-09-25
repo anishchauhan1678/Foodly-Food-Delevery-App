@@ -62,6 +62,25 @@ function renderCategories() {
     });
 }
 
+function renderHero() {
+    const restaurant = [...AppState.restaurants].sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0))[0];
+    const food = [...AppState.foods].sort((a, b) => Number(b.rating || 0) - Number(a.rating || 0))[0];
+    const offer = AppState.offers.find(item => item.isActive);
+    const rating = document.querySelector("#hero-rating");
+    const dishCount = document.querySelector("#hero-dish-count");
+    const deliveryTime = document.querySelector("#hero-delivery-time");
+    const foodName = document.querySelector("#hero-food-name");
+    const foodMeta = document.querySelector("#hero-food-meta");
+    const promo = document.querySelector("#hero-promo-badge");
+
+    if (rating) rating.textContent = restaurant?.rating ? `${restaurant.rating}/5` : "-";
+    if (dishCount) dishCount.textContent = `${AppState.foods.length} dishes`;
+    if (deliveryTime) deliveryTime.textContent = restaurant?.deliveryTime || "Delivery available";
+    if (foodName) foodName.textContent = food?.name || "Popular dish";
+    if (foodMeta) foodMeta.textContent = food ? `${restaurantName(food.restaurantId)} · ${restaurant?.deliveryTime || "Freshly prepared"}` : "Freshly prepared";
+    if (promo) promo.textContent = offer ? offer.title : "Special offer";
+}
+
 function renderOffers() {
     const container = document.querySelector("#offers-container");
     container.replaceChildren();
@@ -350,6 +369,7 @@ function setupSearchInteractions() {
 }
 
 function renderHome() {
+    renderHero();
     renderCategories();
     renderOffers();
     renderRestaurants();

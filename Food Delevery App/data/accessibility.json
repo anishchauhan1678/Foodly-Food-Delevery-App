@@ -1,0 +1,8 @@
+{
+    "defaultTextSize": "normal",
+    "availableTextSizes": ["normal", "large", "extra-large"],
+    "easyMode": false,
+    "voiceReading": true,
+    "highContrast": false,
+    "supportConfig": "support.json"
+}

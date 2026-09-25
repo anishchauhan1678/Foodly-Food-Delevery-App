@@ -65,7 +65,7 @@ function renderTimeline(order) {
         const current = index === currentIndex && order.status !== "delivered";
         const historyEntry = history.find(entry => entry.status === step.status);
         const timestamp = historyEntry?.timestamp ? new Date(historyEntry.timestamp).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : "";
-        return `<div class="timeline-step ${completed ? "completed" : ""} ${current ? "current" : "upcoming"}">
+        return `<div class="timeline-step ${completed ? "completed" : ""} ${current ? "current" : "upcoming"}" aria-current="${current ? "step" : "false"}">
             <div class="timeline-marker" aria-hidden="true">${completed ? "✓" : current ? "●" : "○"}</div>
             <div class="timeline-copy"><strong>${step.label}</strong><span>${step.description}</span>${timestamp ? `<small>${timestamp}</small>` : ""}</div>
         </div>`;
@@ -102,7 +102,8 @@ function renderTracking() {
     const params = new URLSearchParams(window.location.search);
     const requestedOrderId = params.get("order") || params.get("orderId") || params.get("id");
     const fallbackOrder = AppState.orders[0];
-    const orderId = requestedOrderId || fallbackOrder?.orderCode || fallbackOrder?.id || "ORD-B81104";
+    const orderId = requestedOrderId || fallbackOrder?.orderCode || fallbackOrder?.id;
+    if (!orderId) return renderNotFound(container);
     const order = findOrderById(orderId);
 
     if (!order) return renderNotFound(container);

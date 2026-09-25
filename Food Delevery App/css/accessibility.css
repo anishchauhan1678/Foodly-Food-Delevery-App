@@ -1,0 +1,180 @@
+:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
+body.easy-mode.text-large,
+html.text-large {
+    font-size: 19px;
+}
+
+body.easy-mode.text-extra-large,
+html.text-extra-large {
+    font-size: 22px;
+}
+
+body.easy-mode,
+html.text-large,
+html.text-extra-large {
+    --touch-target: 56px;
+}
+
+body.easy-mode button,
+body.easy-mode a.primary-button,
+body.easy-mode a.secondary-button,
+body.easy-mode input,
+body.easy-mode select,
+html.text-large button,
+html.text-large a.primary-button,
+html.text-large a.secondary-button,
+html.text-large input,
+html.text-large select,
+html.text-extra-large button,
+html.text-extra-large a.primary-button,
+html.text-extra-large a.secondary-button,
+html.text-extra-large input,
+html.text-extra-large select {
+    min-height: var(--touch-target);
+}
+
+body.easy-mode .main-nav,
+html.text-large .main-nav,
+html.text-extra-large .main-nav {
+    gap: 0.45rem;
+}
+
+body.easy-mode .main-nav .nav-item,
+body.easy-mode .header-icon,
+body.easy-mode .profile-icon,
+html.text-large .main-nav .nav-item,
+html.text-extra-large .main-nav .nav-item,
+html.text-large .header-icon,
+html.text-extra-large .header-icon,
+html.text-large .profile-icon,
+html.text-extra-large .profile-icon {
+    padding: 0.8rem 0.95rem;
+}
+
+body.high-contrast,
+html.high-contrast {
+    --text: #172033;
+    --muted: #3f4a5a;
+    --border: #596579;
+    --shadow: 0 0 0 2px rgba(23, 32, 51, 0.16);
+    background: #ffffff;
+    color: #172033;
+}
+
+body.high-contrast .primary-button,
+body.high-contrast .secondary-button,
+html.high-contrast .primary-button,
+html.high-contrast .secondary-button {
+    border: 2px solid currentColor;
+    background: #fff;
+}
+
+.support-panel {
+    display: grid;
+    gap: 1rem;
+    max-width: 1080px;
+    margin: 1rem auto 2rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+}
+
+.support-label {
+    margin: 0;
+    color: var(--primary);
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.support-panel h2,
+.support-hours {
+    margin: 0;
+}
+
+.support-hours {
+    color: var(--muted);
+}
+
+.support-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.support-call[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+body.easy-mode .easy-address-chooser {
+    display: grid;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 2px solid var(--primary);
+    border-radius: 14px;
+    background: var(--primary-light);
+}
+
+.easy-address-title,
+.easy-address-copy,
+.easy-address-name {
+    margin: 0;
+}
+
+.easy-address-list {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.easy-address-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-height: 56px;
+    padding: 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    cursor: pointer;
+}
+
+.easy-address-option input {
+    flex: 0 0 auto;
+    min-height: 24px;
+    margin-top: 0.2rem;
+}
+
+.easy-address-option span {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.easy-address-copy {
+    white-space: pre-line;
+    color: var(--text);
+}
+
+.easy-address-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.easy-address-field-hidden {
+    display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

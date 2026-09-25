@@ -23,6 +23,10 @@ body {
 
     line-height: 1.6;
 }
+.order-details-page { padding: 2rem 1rem 4rem; }
+.order-details-section { margin-top: 1.5rem; }
+.order-details-item { margin-bottom: 0.75rem; }
+.order-details-actions { margin-top: 1.5rem; }
 
 
 /* =========================

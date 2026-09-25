@@ -1,0 +1,45 @@
+body { background: var(--background); }
+.addresses-shell { max-width: 1180px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+.addresses-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+.addresses-header h1 { font-size: clamp(2rem, 3vw, 3rem); margin: 0.3rem 0 0; }
+.addresses-header p { margin: 0; color: var(--muted); }
+.address-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.9fr); gap: 1.5rem; }
+.addresses-shell .card { background: var(--white); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow-sm); padding: 1.5rem; }
+.address-list { display: grid; gap: 1rem; }
+.address-card { border: 1px solid var(--border); border-radius: 16px; background: #fff; padding: 1rem; }
+.address-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.address-card-label-row { display: flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; color: var(--dark); }
+.address-icon { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 12px; background: var(--primary-light); }
+.address-badge { display: inline-flex; align-items: center; justify-content: center; padding: 0.35rem 0.7rem; border-radius: 999px; font-size: 0.72rem; font-weight: 800; margin-left: 0.5rem; }
+.address-badge.default { background: #ecfdf5; color: var(--success); }
+.address-badge.selected { background: #fff0dc; color: var(--primary); }
+.address-card-body { color: var(--text); }
+.address-card-body p { margin: 0.25rem 0; }
+.address-name { font-weight: 800; color: var(--dark); }
+.address-phone { color: var(--dark); }
+.address-landmark { color: var(--muted); }
+.address-card-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.ghost-button { border: 1px solid var(--border); background: var(--white); color: var(--dark); border-radius: 10px; padding: 0.7rem 0.9rem; font-weight: 700; cursor: pointer; }
+.ghost-button.danger { color: var(--danger); border-color: rgba(229,72,77,0.2); }
+.address-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.field-group.full-width { grid-column: 1 / -1; }
+.field-group { display: grid; gap: 0.4rem; }
+.field-group label { font-weight: 700; color: var(--dark); }
+.field-group input, .field-group select { width: 100%; min-height: 48px; padding: 0.8rem 0.9rem; border: 1px solid var(--border); border-radius: 12px; background: var(--white); color: var(--dark); font: inherit; }
+.field-group input:focus, .field-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255,118,0,0.15); outline: none; }
+.type-selector { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.type-option { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 999px; background: #fff; cursor: pointer; }
+.type-option input { width: auto; min-height: auto; accent-color: var(--primary); }
+.address-form-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+.form-error { min-height: 22px; margin-top: 0.7rem; color: var(--danger); font-size: 0.9rem; font-weight: 700; }
+.empty-address-card { display: grid; place-items: center; text-align: center; gap: 0.5rem; padding: 2rem 1rem; border: 1px dashed var(--border); border-radius: 18px; background: #fffaf4; }
+.empty-address-icon { font-size: 2.5rem; }
+.empty-address-card h3 { color: var(--dark); }
+.empty-address-card p { color: var(--muted); }
+.modal-backdrop { position: fixed; inset: 0; background: rgba(15,23,42,0.45); display: grid; place-items: center; padding: 1rem; z-index: 25; }
+.modal-backdrop[hidden] { display: none; }
+.modal-card { background: var(--white); width: min(100%, 420px); border-radius: 18px; padding: 1.5rem; box-shadow: var(--shadow-lg); }
+.modal-card h3 { margin-bottom: 0.5rem; color: var(--dark); }
+.modal-card p { color: var(--text); margin-bottom: 1rem; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 0.75rem; }
+@media (max-width: 820px) { .address-grid { grid-template-columns: 1fr; } .address-form-grid { grid-template-columns: 1fr; } .addresses-header { flex-direction: column; align-items: flex-start; } }

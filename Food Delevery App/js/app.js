@@ -1,6 +1,8 @@
 
 import { AppState } from "./state.js";
 import "./theme.js?v=19";
+import "./accessibility.js";
+import "./support.js";
 import { loadAllData } from "./api.js";
 import { loadCart, loadUser, loadOrders, loadUsers } from "./storage.js";
 import { showError, showLoading } from "./utils.js";

@@ -119,6 +119,13 @@ main {
     display: block;
 }
 
+.app-redirect {
+    max-width: 720px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
 .container,
 .page-container,
 .listing-container {
