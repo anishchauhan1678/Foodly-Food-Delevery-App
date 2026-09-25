@@ -1,0 +1,8 @@
+{
+    "appName": "Food Delivery App",
+    "currency": "INR",
+    "currencySymbol": "₹",
+    "deliveryFee": 30,
+    "taxRate": 5,
+    "freeDeliveryAbove": 499
+}

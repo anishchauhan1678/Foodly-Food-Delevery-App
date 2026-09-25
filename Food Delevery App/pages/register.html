@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Food Delivery App</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <style>
+        body { background: #fff; }
+        .auth-shell { max-width: 620px; margin: 4rem auto; padding: 0 1rem 4rem; }
+        .auth-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 20px; box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08); padding: 2rem; }
+        .auth-card h1 { margin: 0.5rem 0 1rem; font-size: clamp(2rem, 5vw, 2.7rem); }
+        .auth-links { margin-top: 1rem; text-align: center; }
+        .auth-links a { color: #e85a28; font-weight: 700; }
+        .form-error { min-height: 22px; color: #b91c1c; font-weight: 700; margin-top: 0.5rem; }
+        .form-error.success { color: #166534; }
+        @media (max-width: 600px) { .auth-card { padding: 1.25rem; } }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+
+        <a href="../index.html" class="brand">
+            <div class="brand-icon">🍴</div>
+
+            <div class="brand-text">
+                <h2>Foodly</h2>
+                <span>Fresh. Fast. Delicious.</span>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="../index.html" class="nav-item">
+                <span>🏠</span>
+                <span>Home</span>
+            </a>
+
+            <a href="restaurants.html" class="nav-item">
+                <span>🍽️</span>
+                <span>Restaurants</span>
+            </a>
+
+            <a href="orders.html" class="nav-item">
+                <span>📦</span>
+                <span>My Orders</span>
+            </a>
+
+            <a href="offers.html" class="nav-item">
+                <span>🎁</span>
+                <span>Offers</span>
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="header-icon" type="button" aria-label="Search">
+                🔍
+            </button>
+
+            <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
+                🛒
+                <span class="cart-count">2</span>
+            </a>
+
+            <a href="profile.html" class="profile-icon" aria-label="Profile">
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+    <main class="auth-shell">
+        <section class="auth-card">
+            <p class="kicker">Create account</p>
+            <h1>Register</h1>
+            <form id="register-form" novalidate>
+                <div class="form-grid">
+                    <div class="field-group full-width">
+                        <label for="register-name">Full Name</label>
+                        <input id="register-name" type="text" autocomplete="name" required>
+                    </div>
+                    <div class="field-group full-width">
+                        <label for="register-email">Email</label>
+                        <input id="register-email" type="email" autocomplete="email" required>
+                    </div>
+                    <div class="field-group full-width">
+                        <label for="register-phone">Phone</label>
+                        <input id="register-phone" type="tel" inputmode="numeric" autocomplete="tel" required>
+                    </div>
+                    <div class="field-group full-width">
+                        <label for="register-password">Password</label>
+                        <input id="register-password" type="password" autocomplete="new-password" required>
+                    </div>
+                    <div class="field-group full-width">
+                        <label for="register-confirm-password">Confirm Password</label>
+                        <input id="register-confirm-password" type="password" autocomplete="new-password" required>
+                    </div>
+                </div>
+                <div class="form-error" id="register-error" aria-live="polite"></div>
+                <button class="primary-button" type="submit" style="width:100%; margin-top: 1rem;">Create Account</button>
+            </form>
+            <div class="auth-links">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/register-page.js"></script>
+</body>
+
+</html>

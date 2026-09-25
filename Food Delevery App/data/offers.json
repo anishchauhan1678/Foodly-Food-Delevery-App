@@ -1,0 +1,57 @@
+[
+    {
+        "id": "offer_001",
+        "title": "Welcome Offer",
+        "description": "Get a discount on your first food order.",
+        "code": "WELCOME50",
+        "discountType": "percentage",
+        "discountValue": 50,
+        "maximumDiscount": 100,
+        "minimumOrder": 199,
+        "isActive": true
+    },
+    {
+        "id": "offer_002",
+        "title": "Flat ₹100 Off",
+        "description": "Get flat ₹100 off on selected orders.",
+        "code": "FLAT100",
+        "discountType": "flat",
+        "discountValue": 100,
+        "maximumDiscount": 100,
+        "minimumOrder": 499,
+        "isActive": true
+    },
+    {
+        "id": "offer_003",
+        "title": "Welcome Treat",
+        "description": "New customers save on their first order.",
+        "code": "WELCOME50",
+        "discountType": "flat",
+        "discountValue": 50,
+        "maximumDiscount": 50,
+        "minimumOrder": 299,
+        "isActive": true
+    },
+    {
+        "id": "offer_004",
+        "title": "Weekend Special",
+        "description": "Enjoy special discounts on weekend orders.",
+        "code": "WEEKEND25",
+        "discountType": "percentage",
+        "discountValue": 15,
+        "maximumDiscount": 150,
+        "minimumOrder": 299,
+        "isActive": true
+    },
+    {
+        "id": "offer_005",
+        "title": "Student Offer",
+        "description": "Special discount for eligible student orders.",
+        "code": "STUDENT20",
+        "discountType": "percentage",
+        "discountValue": 10,
+        "maximumDiscount": 100,
+        "minimumOrder": 199,
+        "isActive": true
+    }
+]

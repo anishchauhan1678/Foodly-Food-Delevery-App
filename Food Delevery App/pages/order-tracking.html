@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order | Food Delivery App</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <header class="main-header">
+
+        <a href="../index.html" class="brand">
+            <div class="brand-icon">🍴</div>
+
+            <div class="brand-text">
+                <h2>Foodly</h2>
+                <span>Fresh. Fast. Delicious.</span>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="../index.html" class="nav-item">
+                <span>🏠</span>
+                <span>Home</span>
+            </a>
+
+            <a href="restaurants.html" class="nav-item">
+                <span>🍽️</span>
+                <span>Restaurants</span>
+            </a>
+
+            <a href="orders.html" class="nav-item active">
+                <span>📦</span>
+                <span>My Orders</span>
+            </a>
+
+            <a href="offers.html" class="nav-item">
+                <span>🎁</span>
+                <span>Offers</span>
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="header-icon" type="button" aria-label="Search">
+                🔍
+            </button>
+
+            <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
+                🛒
+                <span class="cart-count">2</span>
+            </a>
+
+            <a href="profile.html" class="profile-icon" aria-label="Profile">
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+    <main class="listing-container" style="padding: 2rem 1rem 4rem;">
+        <section id="order-tracking-page">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Track your order</p>
+                    <h1>Order Tracking</h1>
+                </div>
+            </div>
+            <div id="tracking-content"></div>
+        </section>
+    </main>
+
+    <footer class="listing-footer">
+        <div class="listing-container">Food Delivery App <span>Fresh ideas, one order at a time.</span></div>
+    </footer>
+
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/order-tracking.js"></script>
+</body>
+</html>

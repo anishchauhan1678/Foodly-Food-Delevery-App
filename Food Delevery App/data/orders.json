@@ -1,0 +1,125 @@
+[
+    {
+        "id": "order_001",
+        "userId": "user_001",
+        "restaurantId": "rest_001",
+        "items": [
+            {
+                "foodId": "food_001",
+                "name": "Chicken Biryani",
+                "quantity": 2,
+                "price": 159,
+                "total": 318
+            },
+            {
+                "foodId": "food_003",
+                "name": "Paneer Butter Masala",
+                "quantity": 1,
+                "price": 199,
+                "total": 199
+            }
+        ],
+        "subtotal": 517,
+        "deliveryFee": 30,
+        "tax": 26,
+        "discount": 50,
+        "total": 523,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "Delivered",
+        "status": "Delivered",
+        "deliveryAddress": {
+            "houseNo": "12",
+            "street": "College Road",
+            "area": "Balasore",
+            "city": "Balasore",
+            "state": "Odisha",
+            "pincode": "756001"
+        },
+        "orderDate": "2026-09-18",
+        "createdAt": "2026-09-18T18:30:00",
+        "estimatedDeliveryTime": "25-30 min"
+    },
+    {
+        "id": "order_002",
+        "userId": "user_002",
+        "restaurantId": "rest_002",
+        "items": [
+            {
+                "foodId": "food_004",
+                "name": "Margherita Pizza",
+                "quantity": 1,
+                "price": 199,
+                "total": 199
+            },
+            {
+                "foodId": "food_006",
+                "name": "Veg Loaded Pizza",
+                "quantity": 1,
+                "price": 249,
+                "total": 249
+            }
+        ],
+        "subtotal": 448,
+        "deliveryFee": 25,
+        "tax": 22,
+        "discount": 100,
+        "total": 395,
+        "paymentMethod": "Cash on Delivery",
+        "paymentStatus": "Pending",
+        "orderStatus": "Out for Delivery",
+        "status": "Out for Delivery",
+        "deliveryAddress": {
+            "houseNo": "24",
+            "street": "Station Road",
+            "area": "Balasore",
+            "city": "Balasore",
+            "state": "Odisha",
+            "pincode": "756002"
+        },
+        "orderDate": "2026-09-20",
+        "createdAt": "2026-09-20T12:15:00",
+        "estimatedDeliveryTime": "30-35 min"
+    },
+    {
+        "id": "order_003",
+        "userId": "user_003",
+        "restaurantId": "rest_004",
+        "items": [
+            {
+                "foodId": "food_010",
+                "name": "Masala Dosa",
+                "quantity": 2,
+                "price": 99,
+                "total": 198
+            },
+            {
+                "foodId": "food_011",
+                "name": "Idli Sambar",
+                "quantity": 1,
+                "price": 75,
+                "total": 75
+            }
+        ],
+        "subtotal": 273,
+        "deliveryFee": 15,
+        "tax": 14,
+        "discount": 0,
+        "total": 302,
+        "paymentMethod": "UPI",
+        "paymentStatus": "Paid",
+        "orderStatus": "Preparing",
+        "status": "Preparing",
+        "deliveryAddress": {
+            "houseNo": "35",
+            "street": "Market Road",
+            "area": "Balasore",
+            "city": "Balasore",
+            "state": "Odisha",
+            "pincode": "756003"
+        },
+        "orderDate": "2026-09-20",
+        "createdAt": "2026-09-20T13:45:00",
+        "estimatedDeliveryTime": "20-25 min"
+    }
+]

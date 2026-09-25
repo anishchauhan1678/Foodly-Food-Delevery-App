@@ -1,0 +1,32 @@
+[
+    {
+        "id": "addr_001",
+        "userId": "user_001",
+        "type": "Home",
+        "label": "Home",
+        "fullName": "Demo User",
+        "phone": "9999999999",
+        "house": "12",
+        "area": "Main Road",
+        "city": "Balasore",
+        "state": "Odisha",
+        "pin": "756001",
+        "landmark": "Near Market Square",
+        "isDefault": true
+    },
+    {
+        "id": "addr_002",
+        "userId": "user_001",
+        "type": "Work",
+        "label": "Work",
+        "fullName": "Demo User",
+        "phone": "9999999999",
+        "house": "24",
+        "area": "Station Road",
+        "city": "Balasore",
+        "state": "Odisha",
+        "pin": "756002",
+        "landmark": "Near Railway Station",
+        "isDefault": false
+    }
+]

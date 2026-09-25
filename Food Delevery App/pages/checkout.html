@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+
+<body>
+    <header class="main-header">
+
+        <a href="home.html" class="brand">
+            <div class="brand-icon">🍴</div>
+
+            <div class="brand-text">
+                <h2>Foodly</h2>
+                <span>Fresh. Fast. Delicious.</span>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="home.html" class="nav-item">
+                <span>🏠</span>
+                <span>Home</span>
+            </a>
+
+            <a href="restaurants.html" class="nav-item">
+                <span>🍽️</span>
+                <span>Restaurants</span>
+            </a>
+
+            <a href="orders.html" class="nav-item">
+                <span>📦</span>
+                <span>My Orders</span>
+            </a>
+
+            <a href="offers.html" class="nav-item">
+                <span>🎁</span>
+                <span>Offers</span>
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="header-icon" type="button" aria-label="Search">
+                🔍
+            </button>
+
+            <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
+                🛒
+                <span class="cart-count">2</span>
+            </a>
+
+            <a href="profile.html" class="profile-icon" aria-label="Profile">
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+    <main id="checkout-page">
+        <div class="listing-container breadcrumb" aria-label="Breadcrumb">
+            <a href="home.html">Home</a>
+            <span aria-hidden="true">→</span>
+            <a href="cart.html">Cart</a>
+            <span aria-hidden="true">→</span>
+            <span>Checkout</span>
+        </div>
+
+        <section class="listing-container checkout-intro">
+            <p class="kicker">One last look</p>
+            <h1>Checkout</h1>
+            <p>Confirm your details and review your order.</p>
+        </section>
+
+        <div id="checkout-loading" class="listing-container checkout-loading" role="status" aria-live="polite">
+            Loading checkout...
+        </div>
+
+        <section id="checkout-empty" class="listing-container checkout-empty" hidden>
+            <h2>Your cart is empty.</h2>
+            <p>Add food before continuing to checkout.</p>
+            <div class="checkout-empty-actions">
+                <a class="primary-button" href="restaurants.html">Back to Restaurants</a>
+                <a class="secondary-button" href="cart.html">View Cart</a>
+            </div>
+        </section>
+
+        <div id="checkout-content" class="listing-container checkout-layout" hidden>
+            <form id="checkout-form" class="checkout-form" novalidate>
+                <section class="checkout-panel">
+                    <p class="kicker">Delivery information</p>
+                    <h2>Where should we deliver?</h2>
+
+                    <div class="form-grid">
+                        <div class="field-group">
+                            <label for="customer-name">Full Name</label>
+                            <input id="customer-name" name="name" type="text" autocomplete="name" aria-describedby="name-error" />
+                            <span id="name-error" class="field-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="customer-mobile">Mobile Number</label>
+                            <input id="customer-mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel" aria-describedby="mobile-error" />
+                            <span id="mobile-error" class="field-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="field-group full-width">
+                            <label for="customer-email">Email Address <small>(optional)</small></label>
+                            <input id="customer-email" name="email" type="email" autocomplete="email" aria-describedby="email-error" />
+                            <span id="email-error" class="field-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="address-house">House / Flat Number</label>
+                            <input id="address-house" name="house" type="text" autocomplete="address-line1" aria-describedby="house-error" />
+                            <span id="house-error" class="field-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="address-street">Street / Area</label>
+                            <input id="address-street" name="street" type="text" autocomplete="address-line2" aria-describedby="street-error" />
+                            <span id="street-error" class="field-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="address-city">City</label>
+                            <input id="address-city" name="city" type="text" autocomplete="address-level2" aria-describedby="city-error" />
+                            <span id="city-error" class="field-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="address-state">State</label>
+                            <input id="address-state" name="state" type="text" autocomplete="address-level1" aria-describedby="state-error" />
+                            <span id="state-error" class="field-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="address-pincode">PIN Code</label>
+                            <input id="address-pincode" name="pincode" type="text" inputmode="numeric" autocomplete="postal-code" aria-describedby="pincode-error" />
+                            <span id="pincode-error" class="field-error" aria-live="polite"></span>
+                        </div>
+
+                        <div class="field-group full-width">
+                            <label for="address-landmark">Landmark <small>(optional)</small></label>
+                            <input id="address-landmark" name="landmark" type="text" aria-describedby="landmark-error" />
+                            <span id="landmark-error" class="field-error" aria-live="polite"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="checkout-panel">
+                    <p class="kicker">Payment method</p>
+                    <h2>How would you like to pay?</h2>
+
+                    <div class="payment-options" role="radiogroup" aria-label="Payment method choices">
+                        <label>
+                            <input type="radio" name="paymentMethod" value="cod" checked />
+                            <span>Cash on Delivery</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="paymentMethod" value="upi" />
+                            <span>UPI</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="paymentMethod" value="card" />
+                            <span>Card</span>
+                        </label>
+                    </div>
+                    <p id="online-payment-message" class="payment-note" hidden></p>
+                    <p id="payment-error" class="field-error" aria-live="polite"></p>
+                </section>
+
+                <div id="checkout-alert" class="checkout-alert" aria-live="polite"></div>
+                <p id="checkout-message" class="checkout-message" hidden></p>
+                <button id="place-order-button" class="place-order-button" type="submit">Place Order</button>
+            </form>
+
+            <aside class="checkout-review" aria-label="Order review panel">
+                <div class="review-panel">
+                    <p class="kicker">Order review</p>
+                    <h2>Your order</h2>
+
+                    <div id="checkout-items" class="checkout-items"></div>
+                    <a class="edit-cart" href="cart.html">Edit Cart</a>
+
+                    <div class="checkout-summary-row">
+                        <span>Subtotal</span>
+                        <strong id="checkout-subtotal">₹0</strong>
+                    </div>
+                    <div class="checkout-summary-row">
+                        <span>Delivery Fee</span>
+                        <strong id="checkout-delivery">₹0</strong>
+                    </div>
+                    <div class="checkout-summary-row">
+                        <span>Discount</span>
+                        <strong id="checkout-discount">₹0</strong>
+                    </div>
+                    <div class="checkout-total">
+                        <span>Total</span>
+                        <strong id="checkout-total">₹0</strong>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <div class="listing-container back-cart">
+            <a href="cart.html">← Back to Cart</a>
+        </div>
+    </main>
+
+    <footer class="listing-footer">
+        <div class="listing-container">Food Delivery App <span>Secure payment processing arrives in a later phase.</span></div>
+    </footer>
+
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/site-auth.js"></script>
+    <script type="module" src="../js/checkout-page.js?v=20"></script>
+</body>
+
+</html>

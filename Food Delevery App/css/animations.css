@@ -1,0 +1,59 @@
+/* Shared motion and interaction states. */
+
+.favorite-toggle,
+.food-card,
+.restaurant-card,
+.category-card,
+.offer-card,
+.primary-button,
+.secondary-button,
+.add-button,
+.coupon-copy-btn,
+.coupon-apply-btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.favorite-toggle:hover,
+.favorite-toggle:focus-visible,
+.food-card:hover,
+.restaurant-card:hover,
+.category-card:hover,
+.offer-card:hover,
+.primary-button:hover,
+.secondary-button:hover,
+.add-button:hover,
+.coupon-copy-btn:hover,
+.coupon-apply-btn:hover {
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.food-card,
+.restaurant-card,
+.category-card,
+.offer-card {
+    animation: fadeIn 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

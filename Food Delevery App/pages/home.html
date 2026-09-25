@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover delicious meals from local restaurants and order fast with Foodly.">
+    <title>Home | Foodly</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+    <header class="main-header">
+
+        <a href="home.html" class="brand">
+            <div class="brand-icon">🍴</div>
+
+            <div class="brand-text">
+                <h2>Foodly</h2>
+                <span>Fresh. Fast. Delicious.</span>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="home.html" class="nav-item active">
+                <span>🏠</span>
+                <span>Home</span>
+            </a>
+
+            <a href="restaurants.html" class="nav-item">
+                <span>🍽️</span>
+                <span>Restaurants</span>
+            </a>
+
+            <a href="orders.html" class="nav-item">
+                <span>📦</span>
+                <span>My Orders</span>
+            </a>
+
+            <a href="offers.html" class="nav-item">
+                <span>🎁</span>
+                <span>Offers</span>
+            </a>
+
+            <a href="favorites.html" class="nav-item">
+                <span>❤️</span>
+                <span>Favorites</span>
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="header-icon" type="button" aria-label="Search">
+                🔍
+            </button>
+
+            <a href="cart.html" class="header-icon cart-icon" aria-label="Cart">
+                🛒
+                <span class="cart-count">2</span>
+            </a>
+
+            <a href="favorites.html" class="header-icon favorite-header" aria-label="Favorites">
+                ❤️
+                <span class="favorite-count" hidden>0</span>
+            </a>
+
+            <a href="profile.html" class="profile-icon" aria-label="Profile">
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+    <main id="home-page">
+        <section class="hero-section">
+            <div class="page-container hero-shell">
+                <div class="hero-copy">
+                    <p class="eyebrow">🍴 Delicious food, delivered fast</p>
+                    <h1>Your favorite food,<br>delivered to your door.</h1>
+                    <p class="hero-subtitle">Discover delicious meals from restaurants around you and get them delivered
+                        fresh and fast.</p>
+
+                    <div class="hero-actions">
+                        <a class="primary-button hero-cta" href="restaurants.html">🍽️ Explore Restaurants</a>
+                        <a class="secondary-button" href="cart.html">🛒 View Cart</a>
+                    </div>
+
+                    <div class="hero-trust" aria-label="Sample trust and delivery stats">
+                        <div class="trust-item">
+                            <span aria-hidden="true">⭐</span>
+                            <div>
+                                <strong>4.8/5</strong>
+                                <small>Sample rating</small>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <span aria-hidden="true">🍽️</span>
+                            <div>
+                                <strong>100+ dishes</strong>
+                                <small>Sample menu</small>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <span aria-hidden="true">🚚</span>
+                            <div>
+                                <strong>Fast delivery</strong>
+                                <small>Sample promise</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-label="Featured food illustration">
+                    <div class="floating-card rating-badge">
+                        <span>⭐</span>
+                        <strong>4.8</strong>
+                    </div>
+
+                    <div class="floating-card delivery-pill">
+                        <span>🚚</span>
+                        18 min delivery
+                    </div>
+
+                    <div class="dish-preview">
+                        <div class="dish-preview__content">
+                            <p class="dish-label">Popular today</p>
+                            <h3>Harbor Slice</h3>
+                            <p>Fresh burgers • 25 min</p>
+                        </div>
+                        <img src="../assets/placeholder-food.svg" alt="Fresh burger platter" width="420" height="360">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-strip page-container" id="search" aria-label="Quick search for food and restaurants">
+            <div class="search-strip__inner">
+                <div class="search-heading">
+                    <span aria-hidden="true">🔍</span>
+                    <p>What are you craving today?</p>
+                </div>
+
+                <div class="search-field-wrapper">
+                    <form id="hero-search-form" class="hero-search" role="search">
+                        <label class="sr-only" for="hero-search-input">Search for food or restaurants</label>
+                        <input id="hero-search-input" type="search" placeholder="Search for food or restaurants..."
+                            autocomplete="off" aria-describedby="search-suggestions">
+                        <button type="submit">Search</button>
+                    </form>
+                    <button id="search-clear-btn" class="search-clear" type="button" aria-label="Clear search"
+                        hidden>✕</button>
+                    <div id="search-suggestions" class="search-suggestions" role="listbox"
+                        aria-label="Search suggestions" hidden></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-results-section page-container" id="search-results-section" hidden>
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Search</p>
+                    <h2 id="search-results-title">Results</h2>
+                </div>
+            </div>
+            <div id="search-results" class="result-grid"></div>
+        </section>
+
+        <section class="content-section page-container" id="categories">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Explore</p>
+                    <h2>Browse Categories</h2>
+                </div>
+            </div>
+            <div id="categories-container" class="category-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="content-section page-container" id="restaurants">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">From the neighbourhood</p>
+                    <h2>Popular Restaurants</h2>
+                </div>
+                <a href="restaurants.html">View all</a>
+            </div>
+            <div id="restaurants-container" class="restaurant-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="content-section page-container" id="foods">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Crowd favourites</p>
+                    <h2>Popular Dishes</h2>
+                </div>
+            </div>
+            <div id="foods-container" class="food-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="content-section offers-band" id="offers">
+            <div class="page-container">
+                <div class="promo-card">
+                    <div class="promo-copy">
+                        <p class="eyebrow">Craving something delicious?</p>
+                        <h2>Get special offers on your favorite meals.</h2>
+                        <p>Fresh picks and tasty deals for your next order.</p>
+                        <a class="secondary-button promo-button" href="offers.html">View Offers</a>
+                    </div>
+                    <div class="promo-visual" aria-hidden="true">
+                        <div class="promo-badge">Save 30%</div>
+                        <img src="../assets/placeholder-food.svg" alt="Delicious meal illustration" width="240"
+                            height="180">
+                    </div>
+                </div>
+                <div id="offers-container" class="offer-grid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section class="why-section">
+            <div class="page-container">
+                <div class="section-heading why-heading">
+                    <div>
+                        <p class="eyebrow">The easy choice</p>
+                        <h2>Why Choose Foodly?</h2>
+                    </div>
+                </div>
+
+                <div class="why-grid">
+                    <article class="why-item">
+                        <span class="why-icon" aria-hidden="true">🚚</span>
+                        <h3>Fast Delivery</h3>
+                        <p>Get your food delivered quickly and reliably.</p>
+                    </article>
+                    <article class="why-item">
+                        <span class="why-icon" aria-hidden="true">🍴</span>
+                        <h3>Fresh Food</h3>
+                        <p>Enjoy meals prepared fresh and served with care.</p>
+                    </article>
+                    <article class="why-item">
+                        <span class="why-icon" aria-hidden="true">💳</span>
+                        <h3>Easy Ordering</h3>
+                        <p>Simple steps from browsing to checkout without fuss.</p>
+                    </article>
+                    <article class="why-item">
+                        <span class="why-icon" aria-hidden="true">⭐</span>
+                        <h3>Great Choices</h3>
+                        <p>Explore a variety of dishes and neighborhood favorites.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section page-container">
+            <div class="cta-box">
+                <div>
+                    <p class="eyebrow">Ready when you are</p>
+                    <h2>Ready to order something delicious?</h2>
+                    <p>Explore restaurants and discover your next favorite meal.</p>
+                </div>
+                <a class="primary-button" href="restaurants.html">Order Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-container footer-grid">
+            <div>
+                <strong>Foodly</strong>
+                <p>Fresh. Fast. Delicious.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="restaurants.html">Restaurants</a></li>
+                    <li><a href="orders.html">My Orders</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="profile.html">Help</a></li>
+                    <li><a href="profile.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/app.js"></script>
+    <script type="module" src="../js/site-auth.js"></script>
+    <script type="module" src="../js/home.js"></script>
+</body>
+
+</html>

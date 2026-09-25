@@ -1,0 +1,216 @@
+﻿[
+    {
+        "id": "rest_001",
+        "name": "Spice Garden",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.5,
+        "ratingCount": 1250,
+        "cuisines": [
+            "Indian",
+            "Biryani"
+        ],
+        "deliveryTime": "25-30 min",
+        "priceForTwo": 350,
+        "minimumOrder": 149,
+        "address": "Balasore, Odisha",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_003"
+        ]
+    },
+    {
+        "id": "rest_002",
+        "name": "Harbor Slice",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.3,
+        "ratingCount": 980,
+        "cuisines": [
+            "Italian",
+            "Fast Food"
+        ],
+        "deliveryTime": "30-35 min",
+        "priceForTwo": 420,
+        "minimumOrder": 199,
+        "address": "Station Road, Balasore",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_001",
+            "cat_006"
+        ]
+    },
+    {
+        "id": "rest_003",
+        "name": "Copper Bun",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.2,
+        "ratingCount": 750,
+        "cuisines": [
+            "American",
+            "Fast Food"
+        ],
+        "deliveryTime": "20-25 min",
+        "priceForTwo": 280,
+        "minimumOrder": 129,
+        "address": "Market Road, Balasore",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_002",
+            "cat_006"
+        ]
+    },
+    {
+        "id": "rest_004",
+        "name": "Morning Tawa",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.6,
+        "ratingCount": 1430,
+        "cuisines": [
+            "South Indian"
+        ],
+        "deliveryTime": "20-25 min",
+        "priceForTwo": 240,
+        "minimumOrder": 99,
+        "address": "College Road, Balasore",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_005"
+        ]
+    },
+    {
+        "id": "rest_005",
+        "name": "Jade Wok House",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.1,
+        "ratingCount": 620,
+        "cuisines": [
+            "Chinese",
+            "Asian"
+        ],
+        "deliveryTime": "30-40 min",
+        "priceForTwo": 390,
+        "minimumOrder": 179,
+        "address": "Market Road, Balasore",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_004"
+        ]
+    },
+    {
+        "id": "rest_006",
+        "name": "Velvet Spoon",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.4,
+        "ratingCount": 540,
+        "cuisines": [
+            "Desserts",
+            "Beverages"
+        ],
+        "deliveryTime": "25-30 min",
+        "priceForTwo": 300,
+        "minimumOrder": 149,
+        "address": "Bus Stand Road, Balasore",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_007",
+            "cat_008"
+        ]
+    },
+    {
+        "id": "rest_007",
+        "name": "Curry Compass",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.5,
+        "ratingCount": 860,
+        "cuisines": [
+            "Indian",
+            "Biryani"
+        ],
+        "deliveryTime": "35-40 min",
+        "priceForTwo": 370,
+        "minimumOrder": 159,
+        "address": "Remuna Road, Balasore",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_003"
+        ]
+    },
+    {
+        "id": "rest_008",
+        "name": "Olive Oven",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.0,
+        "ratingCount": 430,
+        "cuisines": [
+            "Italian",
+            "Fast Food"
+        ],
+        "deliveryTime": "30-35 min",
+        "priceForTwo": 450,
+        "minimumOrder": 199,
+        "address": "FM College Road, Balasore",
+        "isOpen": false,
+        "categoryIds": [
+            "cat_001",
+            "cat_006"
+        ]
+    },
+    {
+        "id": "rest_009",
+        "name": "Tamarind Leaf",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.7,
+        "ratingCount": 1120,
+        "cuisines": [
+            "South Indian",
+            "Indian"
+        ],
+        "deliveryTime": "25-30 min",
+        "priceForTwo": 260,
+        "minimumOrder": 119,
+        "address": "Nuasahi, Balasore",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_005"
+        ]
+    },
+    {
+        "id": "rest_010",
+        "name": "Fizz & Crumb",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.2,
+        "ratingCount": 510,
+        "cuisines": [
+            "Desserts",
+            "Beverages"
+        ],
+        "deliveryTime": "20-25 min",
+        "priceForTwo": 280,
+        "minimumOrder": 129,
+        "address": "Town Hall Road, Balasore",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_007",
+            "cat_008"
+        ]
+    },
+    {
+        "id": "rest_011",
+        "name": "Mea Amore",
+        "image": "../assets/placeholder-restaurant.svg",
+        "rating": 4.5,
+        "ratingCount": 500,
+        "cuisines": [
+            "Ice Cream",
+            "Coldrinks"
+        ],
+        "deliveryTime": "20-25 min",
+        "priceForTwo": 100,
+        "minimumOrder": 49,
+        "address": "Town Hall Road, Balasore",
+        "isOpen": true,
+        "categoryIds": [
+            "cat_008",
+            "cat_009"
+        ]
+    }
+]

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple and user-friendly food delivery application.">
+    <title>Food Delivery App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/components.css">
+    <script>
+        const savedFoodlyTheme = localStorage.getItem("foodlyTheme");
+        if (savedFoodlyTheme === "dark" || savedFoodlyTheme === "light") document.documentElement.dataset.theme = savedFoodlyTheme;
+    </script>
+</head>
+
+<body>
+    <header class="main-header">
+
+        <a href="index.html" class="brand">
+            <div class="brand-icon">🍴</div>
+
+            <div class="brand-text">
+                <h2>Foodly</h2>
+                <span>Fresh. Fast. Delicious.</span>
+            </div>
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="index.html" class="nav-item active">
+                <span>🏠</span>
+                <span>Home</span>
+            </a>
+
+            <a href="pages/restaurants.html" class="nav-item">
+                <span>🍽️</span>
+                <span>Restaurants</span>
+            </a>
+
+            <a href="pages/orders.html" class="nav-item">
+                <span>📦</span>
+                <span>My Orders</span>
+            </a>
+
+            <a href="pages/offers.html" class="nav-item">
+                <span>🎁</span>
+                <span>Offers</span>
+            </a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button class="header-icon" type="button" aria-label="Search">
+                🔍
+            </button>
+
+            <a href="pages/cart.html" class="header-icon cart-icon" aria-label="Cart">
+                🛒
+                <span class="cart-count">2</span>
+            </a>
+
+            <a href="pages/profile.html" class="profile-icon" aria-label="Profile">
+                👤
+            </a>
+
+        </div>
+
+    </header>
+
+    <main id="app" style="max-width: 720px; margin: 4rem auto; padding: 2rem; text-align: center;">
+        <p class="eyebrow">Food Delivery App</p>
+        <h1>Redirecting to home...</h1>
+        <p>Loading your app experience.</p>
+    </main>
+
+    <script type="module">
+        window.location.replace("./pages/home.html");
+    </script>
+</body>
+
+</html>
